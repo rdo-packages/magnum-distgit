@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-bfc6e1d296465d37de4da4e80b61dcd90aada721       	magnum-distgit-core
-56eab92a9fce491e3b1d4af8268beb1f8016236a        	magnum-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+56eab92a9fce491e3b1d4af8268beb1f8016236a	openstack/magnum-distgit-ptl
+bfc6e1d296465d37de4da4e80b61dcd90aada721	magnum-distgit-core
+global:Registered-Users                 	Registered Users
