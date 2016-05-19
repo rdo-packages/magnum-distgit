@@ -20,8 +20,9 @@ BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-pbr
 BuildRequires: python-setuptools
-
 BuildRequires: systemd-units
+# Required for config file generation
+BuildRequires: python-pycadf
 
 Requires: %{name}-common = %{version}-%{release}
 Requires: %{name}-conductor = %{version}-%{release}
@@ -66,6 +67,7 @@ Requires: python-oslo-utils
 Requires: python-oslo-versionedobjects
 Requires: python-oslo-reports
 
+Requires: python-pycadf
 Requires: python-paramiko
 Requires: python2-pecan
 
