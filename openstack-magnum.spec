@@ -23,6 +23,8 @@ BuildRequires: python-setuptools
 BuildRequires: systemd-units
 # Required for config file generation
 BuildRequires: python-pycadf
+# Required to compile translation files
+BuildRequires: python-babel
 
 Requires: %{name}-common = %{version}-%{release}
 Requires: %{name}-conductor = %{version}-%{release}
@@ -227,6 +229,8 @@ find contrib -name tests -type d | xargs rm -rf
 
 %build
 %{__python2} setup.py build
+# Generate i18n files
+%{__python2} setup.py compile_catalog -d build/lib/%{service}/locale
 
 %install
 %{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
@@ -260,6 +264,15 @@ chmod 640 %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 install -p -D -m 640 etc/magnum/policy.json %{buildroot}%{_sysconfdir}/%{service}
 install -p -D -m 640 etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
 
+# Install i18n .mo files (.po and .pot are not required)
+install -d -m 755 %{buildroot}%{_datadir}
+rm -f %{buildroot}%{python2_sitelib}/%{service}/locale/*/LC_*/%{service}*po
+rm -f %{buildroot}%{python2_sitelib}/%{service}/locale/*pot
+mv %{buildroot}%{python2_sitelib}/%{service}/locale %{buildroot}%{_datadir}/locale
+
+# Find language files
+%find_lang %{service} --all-name
+
 %check
 %{__python2} setup.py test ||
 
@@ -270,7 +283,7 @@ install -p -D -m 640 etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{servi
 %exclude %{python2_sitelib}/%{service}/tests
 
 
-%files common
+%files common -f %{service}.lang
 %{_bindir}/magnum-db-manage
 %{_bindir}/magnum-template-manage
 %license LICENSE
