@@ -150,7 +150,6 @@ Summary:          Tests for OpenStack Magnum
 
 Requires:        python-%{service} = %{version}-%{release}
 
-BuildRequires:   bandit
 BuildRequires:   python-coverage
 BuildRequires:   python-fixtures
 BuildRequires:   python-hacking
