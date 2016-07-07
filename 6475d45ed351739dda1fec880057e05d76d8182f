@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_27ee5a8c",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-07-07T14:11:18Z",
+      "side": 1,
+      "message": "Let\u0027s not change irrelevant parts of the file.",
+      "revId": "6475d45ed351739dda1fec880057e05d76d8182f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
