@@ -20,6 +20,7 @@ BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-pbr
 BuildRequires: python-setuptools
+BuildRequires: python-werkzeug
 BuildRequires: systemd-units
 # Required for config file generation
 BuildRequires: python-pycadf
@@ -87,6 +88,7 @@ Requires: python-stevedore
 Requires: python-taskflow
 Requires: python-cryptography
 Requires: python-urllib3
+Requires: python-werkzeug
 
 
 %description -n python-%{service}
@@ -348,4 +350,3 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
-
