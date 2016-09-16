@@ -9,7 +9,7 @@ Release:	XXX
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
-Source0:	http://tarballs.openstack.org/%{service}/%{service}-%{version}.tar.gz
+Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{version}.tar.gz
 
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
