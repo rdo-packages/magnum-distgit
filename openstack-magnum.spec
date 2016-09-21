@@ -4,7 +4,7 @@
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	3.0.0
+Version:	3.1.0
 Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
@@ -351,6 +351,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Wed Sep 21 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.1.0-1
+- Update to 3.1.0
+
 * Thu Sep 15 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.0.0-1
 - Update to 3.0.0
 
