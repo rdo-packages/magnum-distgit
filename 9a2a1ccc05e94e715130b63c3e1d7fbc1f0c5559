@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_ee336ff4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-10-14T14:48:24Z",
+      "side": 1,
+      "message": "This was introduced by patch https://review.openstack.org/385756 . Could you add this to the commit msg?",
+      "revId": "9a2a1ccc05e94e715130b63c3e1d7fbc1f0c5559",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
