@@ -274,7 +274,7 @@ install -p -D -m 640 etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{servi
 
 %files common
 %{_bindir}/magnum-db-manage
-%{_bindir}/magnum-template-manage
+%{_bindir}/magnum-driver-manage
 %license LICENSE
 %dir %attr(0750,%{service},root) %{_localstatedir}/log/%{service}
 %dir %attr(0755,%{service},root) %{_localstatedir}/run/%{service}
