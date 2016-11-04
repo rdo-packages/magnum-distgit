@@ -88,6 +88,7 @@ Requires: python-taskflow
 Requires: python-cryptography
 Requires: python-urllib3
 Requires: python-werkzeug
+Requires: python-marathon
 
 
 %description -n python-%{service}
@@ -213,6 +214,7 @@ BuildRequires: python-stevedore
 BuildRequires: python-taskflow
 BuildRequires: python-cryptography
 BuildRequires: python-urllib3
+BuildRequires: python-marathon
 
 %description -n python-%{service}-tests
 Magnum is an OpenStack project which offers container orchestration engines
