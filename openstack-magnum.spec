@@ -235,6 +235,17 @@ find contrib -name tests -type d | xargs rm -rf
 %install
 %{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
 
+# Create fake egg-info for the tempest plugin
+egg_path=%{buildroot}%{python2_sitelib}/%{service}-*.egg-info
+tempest_egg_path=%{buildroot}%{python2_sitelib}/%{service}_tests.egg-info
+mkdir $tempest_egg_path
+grep "tempest\|Tempest" %{service}.egg-info/entry_points.txt >$tempest_egg_path/entry_points.txt
+cp -r $egg_path/PKG-INFO $tempest_egg_path
+sed -i "s/%{service}/%{service}_tests/g" $tempest_egg_path/PKG-INFO
+# Remove any reference to Tempest plugin in the main package entry point
+sed -i "/tempest\|Tempest/d" $egg_path/entry_points.txt
+
+
 # docs generation requires everything to be installed first
 export PYTHONPATH="$( pwd ):$PYTHONPATH"
 
@@ -328,7 +339,7 @@ exit 0
 %files -n python-%{service}-tests
 %license LICENSE
 %{python2_sitelib}/%{service}/tests
-
+%{python2_sitelib}/%{service}_tests.egg-info
 
 %post api
 %systemd_post %{name}-api.service
