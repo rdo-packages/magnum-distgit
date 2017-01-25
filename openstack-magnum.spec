@@ -25,6 +25,7 @@ BuildRequires: python-werkzeug
 BuildRequires: systemd-units
 # Required for config file generation
 BuildRequires: python-pycadf
+BuildRequires: python-osprofiler
 
 Requires: %{name}-common = %{version}-%{release}
 Requires: %{name}-conductor = %{version}-%{release}
@@ -68,6 +69,7 @@ Requires: python-oslo-service
 Requires: python-oslo-utils
 Requires: python-oslo-versionedobjects
 Requires: python-oslo-reports
+Requires: python-osprofiler
 
 Requires: python-pycadf
 Requires: python-paramiko
