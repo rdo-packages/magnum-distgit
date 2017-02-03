@@ -42,7 +42,7 @@ Requires: python-babel
 Requires: python-prettytable
 Requires: PyYAML
 Requires: python-sqlalchemy
-Requires: python2-wsme
+Requires: python-wsme
 Requires: python-webob
 Requires: python-alembic
 Requires: python-decorator
@@ -52,40 +52,42 @@ Requires: python-eventlet
 Requires: python-greenlet
 Requires: python-iso8601
 Requires: python-jsonpatch
-Requires: python-keystonemiddleware
+Requires: python-keystonemiddleware >= 4.12.0
 Requires: python-netaddr
 
-Requires: python-oslo-concurrency
-Requires: python-oslo-config
-Requires: python-oslo-context
-Requires: python-oslo-db
-Requires: python-oslo-i18n
-Requires: python-oslo-log
-Requires: python-oslo-messaging
-Requires: python-oslo-middleware
-Requires: python-oslo-policy
-Requires: python-oslo-serialization
-Requires: python-oslo-service
-Requires: python-oslo-utils
-Requires: python-oslo-versionedobjects
-Requires: python-oslo-reports
+Requires: python-oslo-concurrency >= 3.8.0
+Requires: python-oslo-config >= 2:3.14.0
+Requires: python-oslo-context >= 2.9.0
+Requires: python-oslo-db >= 4.15.0
+Requires: python-oslo-i18n >= 2.1.0
+Requires: python-oslo-log >= 3.11.0
+Requires: python-oslo-messaging >= 5.14.0
+Requires: python-oslo-middleware >= 3.0.0
+Requires: python-oslo-policy >= 1.17.0
+Requires: python-oslo-serialization >= 1.10.0
+Requires: python-oslo-service >= 1.10.0
+Requires: python-oslo-utils >= 3.18.0
+Requires: python-oslo-versionedobjects >= 1.17.0
+Requires: python-oslo-reports >= 0.6.0
 Requires: python-osprofiler
 
 Requires: python-pycadf
 Requires: python-paramiko
-Requires: python2-pecan
+Requires: python-pecan
 
-Requires: python-barbicanclient
-Requires: python-glanceclient
-Requires: python-heatclient
-Requires: python-neutronclient
-Requires: python-novaclient
-Requires: python-k8sclient
-Requires: python-keystoneclient
+Requires: python-barbicanclient >= 4.0.0
+Requires: python-glanceclient >= 1:2.5.0
+Requires: python-heatclient >= 1.6.1
+Requires: python-neutronclient >= 5.1.0
+Requires: python-novaclient >= 1:6.0.0
+Requires: python-k8sclient >= 0.2.0
+Requires: python-keystoneclient >= 1:3.8.0
+Requires: python-keystoneauth1 >= 2.18.0
 
+Requires: python-cliff >= 2.3.0
 Requires: python-requests
 Requires: python-six
-Requires: python-stevedore
+Requires: python-stevedore >= 1.17.1
 Requires: python-taskflow
 Requires: python-cryptography
 Requires: python-urllib3
@@ -171,7 +173,7 @@ BuildRequires: python-babel
 BuildRequires: python-prettytable
 BuildRequires: PyYAML
 BuildRequires: python-sqlalchemy
-BuildRequires: python2-wsme
+BuildRequires: python-wsme
 BuildRequires: python-webob
 BuildRequires: python-alembic
 BuildRequires: python-decorator
@@ -200,7 +202,7 @@ BuildRequires: python-oslo-versionedobjects
 BuildRequires: python-oslo-reports
 
 BuildRequires: python-paramiko
-BuildRequires: python2-pecan
+BuildRequires: python-pecan
 
 BuildRequires: python-barbicanclient
 BuildRequires: python-glanceclient
