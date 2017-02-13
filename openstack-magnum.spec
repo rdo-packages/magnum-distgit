@@ -4,8 +4,8 @@
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	XXX
-Release:	XXX
+Version:	4.0.0
+Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
@@ -347,3 +347,6 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Mon Feb 13 2017 Alfredo Moralejo <amoralej@redhat.com> 4.0.0-1
+- Update to 4.0.0
+
