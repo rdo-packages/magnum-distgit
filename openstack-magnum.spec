@@ -166,7 +166,7 @@ BuildRequires:   python-subunit
 BuildRequires:   python-testrepository
 BuildRequires:   python-testscenarios
 BuildRequires:   python-testtools
-BuildRequires:   python-tempest-lib
+BuildRequires:   python-tempest
 
 # copy-paste from runtime Requires
 BuildRequires: python-babel
