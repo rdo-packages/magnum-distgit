@@ -80,7 +80,7 @@ Requires: python-glanceclient >= 1:2.5.0
 Requires: python-heatclient >= 1.6.1
 Requires: python-neutronclient >= 5.1.0
 Requires: python-novaclient >= 1:6.0.0
-Requires: python-k8sclient >= 0.2.0
+Requires: python-kubernetes
 Requires: python-keystoneclient >= 1:3.8.0
 Requires: python-keystoneauth1 >= 2.18.0
 
@@ -209,7 +209,7 @@ BuildRequires: python-glanceclient
 BuildRequires: python-heatclient
 BuildRequires: python-neutronclient
 BuildRequires: python-novaclient
-BuildRequires: python-k8sclient
+BuildRequires: python-kubernetes
 BuildRequires: python-keystoneclient
 
 BuildRequires: python-requests
