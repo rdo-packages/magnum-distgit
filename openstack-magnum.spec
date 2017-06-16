@@ -46,7 +46,7 @@ Requires: python-wsme
 Requires: python-webob
 Requires: python-alembic
 Requires: python-decorator
-Requires: python-docker-py
+Requires: python-docker
 Requires: python-enum34
 Requires: python-eventlet
 Requires: python-greenlet
@@ -177,7 +177,7 @@ BuildRequires: python-wsme
 BuildRequires: python-webob
 BuildRequires: python-alembic
 BuildRequires: python-decorator
-BuildRequires: python-docker-py
+BuildRequires: python-docker
 BuildRequires: python-enum34
 BuildRequires: python-eventlet
 BuildRequires: python-greenlet
