@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e1c9a85b",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-06-18T08:41:42Z",
+      "side": 1,
+      "message": "If i use pytho2-docker here and below i can build the pacakge locally.",
+      "range": {
+        "startLine": 49,
+        "startChar": 10,
+        "endLine": 49,
+        "endChar": 22
+      },
+      "revId": "4183bfa369a59846252bcd438f059d12e16defab",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
