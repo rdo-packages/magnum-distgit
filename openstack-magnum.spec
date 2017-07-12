@@ -140,7 +140,7 @@ Summary:    Documentation for OpenStack Magnum
 Requires:    python-%{service} = %{version}-%{release}
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-stevedore
 
 %description -n %{name}-doc
@@ -244,16 +244,11 @@ find contrib -name tests -type d | xargs rm -rf
 %py2_entrypoint %{service} %{service}
 
 # docs generation requires everything to be installed first
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-
-pushd doc
-
 %if 0%{?with_doc}
-SPHINX_DEBUG=1 sphinx-build -b html source build/html
+%{__python2} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
-rm -fr build/html/.doctrees build/html/.buildinfo
+rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %endif
-popd
 
 mkdir -p %{buildroot}%{_localstatedir}/log/%{service}/
 mkdir -p %{buildroot}%{_localstatedir}/run/%{service}/
