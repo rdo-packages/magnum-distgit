@@ -4,8 +4,8 @@
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	XXX
-Release:	XXX
+Version:	5.0.0
+Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
@@ -139,6 +139,7 @@ Requires:    python-%{service} = %{version}-%{release}
 BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-stevedore
+BuildRequires:  graphviz
 
 %description -n %{name}-doc
 Magnum is an OpenStack project which offers container orchestration engines
@@ -335,3 +336,6 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-1
+- Update to 5.0.0
+
