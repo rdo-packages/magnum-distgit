@@ -38,8 +38,8 @@ for deploying and managing containers as first class resources in OpenStack.
 %package -n python-%{service}
 Summary: Magnum Python libraries
 
+Requires: python-pbr
 Requires: python-babel
-Requires: python-prettytable
 Requires: PyYAML
 Requires: python-sqlalchemy
 Requires: python-wsme
@@ -49,48 +49,45 @@ Requires: python-decorator
 Requires: python-docker >= 2.0.0
 Requires: python-enum34
 Requires: python-eventlet
-Requires: python-greenlet
 Requires: python-iso8601
 Requires: python-jsonpatch
 Requires: python-keystonemiddleware >= 4.12.0
 Requires: python-netaddr
 
 Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-config >= 2:3.14.0
-Requires: python-oslo-context >= 2.9.0
-Requires: python-oslo-db >= 4.15.0
+Requires: python-oslo-config >= 2:4.0.0
+Requires: python-oslo-context >= 2.14.0
+Requires: python-oslo-db >= 4.24.0
 Requires: python-oslo-i18n >= 2.1.0
-Requires: python-oslo-log >= 3.11.0
-Requires: python-oslo-messaging >= 5.14.0
-Requires: python-oslo-middleware >= 3.0.0
-Requires: python-oslo-policy >= 1.17.0
+Requires: python-oslo-log >= 3.22.0
+Requires: python-oslo-messaging >= 5.24.2
+Requires: python-oslo-middleware >= 3.27.0
+Requires: python-oslo-policy >= 1.23.0
 Requires: python-oslo-serialization >= 1.10.0
 Requires: python-oslo-service >= 1.10.0
-Requires: python-oslo-utils >= 3.18.0
+Requires: python-oslo-utils >= 3.20.0
 Requires: python-oslo-versionedobjects >= 1.17.0
 Requires: python-oslo-reports >= 0.6.0
 Requires: python-osprofiler
 
 Requires: python-pycadf
-Requires: python-paramiko
 Requires: python-pecan
 
 Requires: python-barbicanclient >= 4.0.0
-Requires: python-glanceclient >= 1:2.5.0
+Requires: python-glanceclient >= 1:2.8.0
 Requires: python-heatclient >= 1.6.1
-Requires: python-neutronclient >= 5.1.0
-Requires: python-novaclient >= 1:6.0.0
+Requires: python-neutronclient >= 6.3.0
+Requires: python-novaclient >= 1:9.0.0
 Requires: python-kubernetes
 Requires: python-keystoneclient >= 1:3.8.0
-Requires: python-keystoneauth1 >= 2.18.0
+Requires: python-keystoneauth1 >= 3.1.0
 
-Requires: python-cliff >= 2.3.0
+Requires: python-cliff >= 2.8.0
 Requires: python-requests
 Requires: python-six
-Requires: python-stevedore >= 1.17.1
+Requires: python-stevedore >= 1.20.0
 Requires: python-taskflow
 Requires: python-cryptography
-Requires: python-urllib3
 Requires: python-werkzeug
 Requires: python-marathon
 
@@ -169,7 +166,6 @@ BuildRequires:   python-tempest
 
 # copy-paste from runtime Requires
 BuildRequires: python-babel
-BuildRequires: python-prettytable
 BuildRequires: PyYAML
 BuildRequires: python-sqlalchemy
 BuildRequires: python-wsme
@@ -179,7 +175,6 @@ BuildRequires: python-decorator
 BuildRequires: python-docker >= 2.0.0
 BuildRequires: python-enum34
 BuildRequires: python-eventlet
-BuildRequires: python-greenlet
 BuildRequires: python-iso8601
 BuildRequires: python-jsonpatch
 BuildRequires: python-keystonemiddleware
@@ -201,7 +196,6 @@ BuildRequires: python-oslo-versionedobjects
 BuildRequires: python2-oslo-versionedobjects-tests
 BuildRequires: python-oslo-reports
 
-BuildRequires: python-paramiko
 BuildRequires: python-pecan
 
 BuildRequires: python-barbicanclient
@@ -217,7 +211,6 @@ BuildRequires: python-six
 BuildRequires: python-stevedore
 BuildRequires: python-taskflow
 BuildRequires: python-cryptography
-BuildRequires: python-urllib3
 BuildRequires: python-marathon
 
 %description -n python-%{service}-tests
