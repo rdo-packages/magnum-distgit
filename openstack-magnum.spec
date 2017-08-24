@@ -139,6 +139,7 @@ Requires:    python-%{service} = %{version}-%{release}
 BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-stevedore
+BuildRequires:  graphviz
 
 %description -n %{name}-doc
 Magnum is an OpenStack project which offers container orchestration engines
