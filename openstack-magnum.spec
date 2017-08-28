@@ -4,7 +4,7 @@
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	5.0.0
+Version:	5.0.1
 Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
@@ -336,6 +336,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Mon Aug 28 2017 rdo-trunk <javier.pena@redhat.com> 5.0.1-1
+- Update to 5.0.1
+
 * Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-1
 - Update to 5.0.0
 
