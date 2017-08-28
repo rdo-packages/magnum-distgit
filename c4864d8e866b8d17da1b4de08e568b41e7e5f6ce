@@ -1,0 +1,10 @@
+Code-Review+2: Spyros Trigazis <strigazi@gmail.com>
+Code-Review+2: hguemar <hguemar@fedoraproject.org>
+Workflow+1: hguemar <hguemar@fedoraproject.org>
+Workflow+1: Spyros Trigazis <strigazi@gmail.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Mon, 28 Aug 2017 10:06:57 +0000
+Reviewed-on: https://review.rdoproject.org/r/9015
+Project: openstack/magnum-distgit
+Branch: refs/heads/pike-rdo
