@@ -2,6 +2,10 @@
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 %global service magnum
 
+%global common_desc \
+Magnum is an OpenStack project which provides a set of services for \
+provisioning, scaling, and managing container orchestration engines.
+
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	XXX
@@ -32,8 +36,7 @@ Requires: %{name}-conductor = %{version}-%{release}
 Requires: %{name}-api = %{version}-%{release}
 
 %description
-Magnum is an OpenStack project which offers container orchestration engines
-for deploying and managing containers as first class resources in OpenStack.
+%{common_desc}
 
 %package -n python-%{service}
 Summary: Magnum Python libraries
@@ -93,8 +96,7 @@ Requires: python-marathon
 
 
 %description -n python-%{service}
-Magnum is an OpenStack project which offers container orchestration engines
-for deploying and managing containers as first class resources in OpenStack.
+%{common_desc}
 
 %package common
 Summary: Magnum common
@@ -142,8 +144,7 @@ BuildRequires:  python-stevedore
 BuildRequires:  graphviz
 
 %description -n %{name}-doc
-Magnum is an OpenStack project which offers container orchestration engines
-for deploying and managing containers as first class resources in OpenStack.
+%{common_desc}
 
 This package contains documentation files for Magnum.
 %endif
@@ -215,8 +216,7 @@ BuildRequires: python-cryptography
 BuildRequires: python-marathon
 
 %description -n python-%{service}-tests
-Magnum is an OpenStack project which offers container orchestration engines
-for deploying and managing containers as first class resources in OpenStack.
+%{common_desc}
 
 %prep
 %autosetup -n %{service}-%{upstream_version} -S git
