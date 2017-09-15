@@ -113,9 +113,7 @@ Summary: The Magnum conductor
 
 Requires: %{name}-common = %{version}-%{release}
 
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+%{?systemd_requires}
 
 %description conductor
 OpenStack Magnum Conductor
@@ -125,9 +123,7 @@ Summary: The Magnum API
 
 Requires: %{name}-common = %{version}-%{release}
 
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+%{?systemd_requires}
 
 %description api
 OpenStack-native ReST API to the Magnum Engine
