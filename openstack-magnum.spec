@@ -260,6 +260,9 @@ chmod 640 %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 install -p -D -m 640 etc/magnum/policy.json %{buildroot}%{_sysconfdir}/%{service}
 install -p -D -m 640 etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
 
+# Remove duplicate config files under /usr/etc/
+rm -rf %{buildroot}%{_prefix}/etc
+
 %check
 %{__python2} setup.py test
 
