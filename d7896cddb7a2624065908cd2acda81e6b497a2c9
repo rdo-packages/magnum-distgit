@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_2e6807f5",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-09-25T16:23:27Z",
+      "side": 1,
+      "message": "rmdir would be better, see https://review.rdoproject.org/r/#/c/9728/6..7/openstack-heat.spec",
+      "revId": "d7896cddb7a2624065908cd2acda81e6b497a2c9",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
