@@ -253,11 +253,11 @@ mkdir -p %{buildroot}%{_sysconfdir}/%{service}/
 
 oslo-config-generator --config-file etc/magnum/magnum-config-generator.conf --output-file %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 chmod 640 %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
-install -p -D -m 640 etc/magnum/policy.json %{buildroot}%{_sysconfdir}/%{service}
-install -p -D -m 640 etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
+mv %{buildroot}%{_prefix}/etc/magnum/policy.json %{buildroot}%{_sysconfdir}/%{service}
+mv %{buildroot}%{_prefix}/etc/magnum/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
 
-# Remove duplicate config files under /usr/etc/
-rm -rf %{buildroot}%{_prefix}/etc
+# Remove duplicate config directory /usr/etc/magnum, we are keeping config files at /etc/magnum
+rmdir %{buildroot}%{_prefix}/etc/magnum
 
 %check
 %{__python2} setup.py test
