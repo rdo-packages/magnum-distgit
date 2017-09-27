@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_8a01eb3b",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-09-27T12:28:29Z",
+      "side": 1,
+      "message": "you can use %{service} here and in following lines for consistency",
+      "range": {
+        "startLine": 256,
+        "startChar": 30,
+        "endLine": 256,
+        "endChar": 36
+      },
+      "revId": "94f2d11fdd34a1dfb2f70921d5e2194c51e4d6cb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
