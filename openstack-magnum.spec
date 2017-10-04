@@ -27,6 +27,7 @@ BuildRequires: python-pbr
 BuildRequires: python-setuptools
 BuildRequires: python-werkzeug
 BuildRequires: systemd-units
+BuildRequires: openstack-macros
 # Required for config file generation
 BuildRequires: python-pycadf
 BuildRequires: python-osprofiler
