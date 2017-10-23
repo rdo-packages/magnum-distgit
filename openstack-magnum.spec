@@ -254,7 +254,6 @@ mkdir -p %{buildroot}%{_sysconfdir}/%{service}/
 
 oslo-config-generator --config-file etc/%{service}/magnum-config-generator.conf --output-file %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 chmod 640 %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
-mv %{buildroot}%{_prefix}/etc/%{service}/policy.json %{buildroot}%{_sysconfdir}/%{service}
 mv %{buildroot}%{_prefix}/etc/%{service}/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
 
 # Remove duplicate config directory /usr/etc/magnum, we are keeping config files at /etc/magnum
@@ -283,7 +282,6 @@ rm magnum/tests/unit/test_hacking.py
 %dir %attr(0755,%{service},root) %{_sysconfdir}/%{service}
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{service}
 %config(noreplace) %attr(-, root, %{service}) %{_sysconfdir}/%{service}/magnum.conf
-%config(noreplace) %attr(-, root, %{service}) %{_sysconfdir}/%{service}/policy.json
 %config(noreplace) %attr(-, root, %{service}) %{_sysconfdir}/%{service}/api-paste.ini
 %pre common
 # 1870:1870 for magnum - rhbz#845078
