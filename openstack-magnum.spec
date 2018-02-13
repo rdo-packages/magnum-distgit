@@ -23,14 +23,14 @@ BuildArch: noarch
 
 BuildRequires: git
 BuildRequires: python2-devel
-BuildRequires: python-pbr
-BuildRequires: python-setuptools
+BuildRequires: python2-pbr
+BuildRequires: python2-setuptools
 BuildRequires: python-werkzeug
 BuildRequires: systemd-units
 BuildRequires: openstack-macros
 # Required for config file generation
-BuildRequires: python-pycadf
-BuildRequires: python-osprofiler
+BuildRequires: python2-pycadf
+BuildRequires: python2-osprofiler
 
 Requires: %{name}-common = %{version}-%{release}
 Requires: %{name}-conductor = %{version}-%{release}
@@ -42,58 +42,58 @@ Requires: %{name}-api = %{version}-%{release}
 %package -n python-%{service}
 Summary: Magnum Python libraries
 
-Requires: python-pbr
-Requires: python-babel
+Requires: python2-pbr
+Requires: python2-babel
 Requires: PyYAML
-Requires: python-sqlalchemy
-Requires: python-wsme
+Requires: python2-sqlalchemy
+Requires: python2-wsme
 Requires: python-webob
-Requires: python-alembic
+Requires: python2-alembic
 Requires: python-decorator
-Requires: python-docker >= 2.0.0
+Requires: python2-locker >= 2.0.0
 Requires: python-enum34
-Requires: python-eventlet
-Requires: python-iso8601
-Requires: python-jsonpatch
-Requires: python-keystonemiddleware >= 4.12.0
-Requires: python-netaddr
+Requires: python2-eventlet
+Requires: python2-iso8601
+Requires: python2-jsonpatch
+Requires: python2-keystonemiddleware >= 4.17.0
+Requires: python2-netaddr
 
-Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-config >= 2:4.0.0
-Requires: python-oslo-context >= 2.14.0
-Requires: python-oslo-db >= 4.24.0
-Requires: python-oslo-i18n >= 2.1.0
-Requires: python-oslo-log >= 3.22.0
-Requires: python-oslo-messaging >= 5.24.2
-Requires: python-oslo-middleware >= 3.27.0
-Requires: python-oslo-policy >= 1.23.0
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-oslo-service >= 1.10.0
-Requires: python-oslo-utils >= 3.20.0
-Requires: python-oslo-versionedobjects >= 1.17.0
-Requires: python-oslo-reports >= 0.6.0
-Requires: python-osprofiler
+Requires: python2-oslo-concurrency >= 3.25.0
+Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-context >= 2.19.2
+Requires: python2-oslo-db >= 4.27.0
+Requires: python2-oslo-i18n >= 3.15.3
+Requires: python2-oslo-log >= 3.36.0
+Requires: python2-oslo-messaging >= 5.29.0
+Requires: python2-oslo-middleware >= 3.31.0
+Requires: python2-oslo-policy >= 1.30.0
+Requires: python2-oslo-serialization >= 2.18.0
+Requires: python2-oslo-service >= 1.24.0
+Requires: python2-oslo-utils >= 3.33.0
+Requires: python2-oslo-versionedobjects >= 1.31.2
+Requires: python2-oslo-reports >= 1.18.0
+Requires: python2-osprofiler
 
-Requires: python-pycadf
-Requires: python-pecan
+Requires: python2-pycadf
+Requires: python2-pecan
 
-Requires: python-barbicanclient >= 4.0.0
-Requires: python-glanceclient >= 1:2.8.0
-Requires: python-heatclient >= 1.6.1
-Requires: python-neutronclient >= 6.3.0
-Requires: python-novaclient >= 1:9.0.0
-Requires: python-kubernetes
-Requires: python-keystoneclient >= 1:3.8.0
-Requires: python-keystoneauth1 >= 3.1.0
+Requires: python2-barbicanclient >= 4.0.0
+Requires: python2-glanceclient >= 2.8.0
+Requires: python2-heatclient >= 1.10.0
+Requires: python2-neutronclient >= 6.3.0
+Requires: python2-novaclient >= 9.1.0
+Requires: python2-kubernetes
+Requires: python2-keystoneclient >= 1:3.8.0
+Requires: python2-keystoneauth1 >= 3.3.0
 
-Requires: python-cliff >= 2.8.0
-Requires: python-requests
-Requires: python-six
-Requires: python-stevedore >= 1.20.0
-Requires: python-taskflow
-Requires: python-cryptography
+Requires: python2-cliff >= 2.8.0
+Requires: python2-requests
+Requires: python2-six
+Requires: python2-stevedore >= 1.20.0
+Requires: python2-taskflow
+Requires: python2-cryptography
 Requires: python-werkzeug
-Requires: python-marathon
+Requires: python2-marathon
 
 
 %description -n python-%{service}
@@ -152,65 +152,65 @@ Summary:          Tests for OpenStack Magnum
 
 Requires:        python-%{service} = %{version}-%{release}
 
-BuildRequires:   python-fixtures
-BuildRequires:   python-hacking
-BuildRequires:   python-mock
-BuildRequires:   python-oslotest
-BuildRequires:   python-os-testr
-BuildRequires:   python-subunit
-BuildRequires:   python-testrepository
-BuildRequires:   python-testscenarios
-BuildRequires:   python-testtools
-BuildRequires:   python-tempest
+BuildRequires:   python2-fixtures
+BuildRequires:   python2-hacking
+BuildRequires:   python2-mock
+BuildRequires:   python2-oslotest
+BuildRequires:   python2-os-testr
+BuildRequires:   python2-subunit
+BuildRequires:   python2-testrepository
+BuildRequires:   python2-testscenarios
+BuildRequires:   python2-testtools
+BuildRequires:   python2-tempest
 
 # copy-paste from runtime Requires
-BuildRequires: python-babel
+BuildRequires: python2-babel
 BuildRequires: PyYAML
-BuildRequires: python-sqlalchemy
-BuildRequires: python-wsme
+BuildRequires: python2-sqlalchemy
+BuildRequires: python2-wsme
 BuildRequires: python-webob
-BuildRequires: python-alembic
+BuildRequires: python2-alembic
 BuildRequires: python-decorator
-BuildRequires: python-docker >= 2.0.0
+BuildRequires: python2-docker >= 2.0.0
 BuildRequires: python-enum34
-BuildRequires: python-eventlet
-BuildRequires: python-iso8601
-BuildRequires: python-jsonpatch
-BuildRequires: python-keystonemiddleware
-BuildRequires: python-netaddr
+BuildRequires: python2-eventlet
+BuildRequires: python2-iso8601
+BuildRequires: python2-jsonpatch
+BuildRequires: python2-keystonemiddleware
+BuildRequires: python2-netaddr
 
-BuildRequires: python-oslo-concurrency
-BuildRequires: python-oslo-config
-BuildRequires: python-oslo-context
-BuildRequires: python-oslo-db
-BuildRequires: python-oslo-i18n
-BuildRequires: python-oslo-log
-BuildRequires: python-oslo-messaging
-BuildRequires: python-oslo-middleware
-BuildRequires: python-oslo-policy
-BuildRequires: python-oslo-serialization
-BuildRequires: python-oslo-service
-BuildRequires: python-oslo-utils
-BuildRequires: python-oslo-versionedobjects
+BuildRequires: python2-oslo-concurrency
+BuildRequires: python2-oslo-config
+BuildRequires: python2-oslo-context
+BuildRequires: python2-oslo-db
+BuildRequires: python2-oslo-i18n
+BuildRequires: python2-oslo-log
+BuildRequires: python2-oslo-messaging
+BuildRequires: python2-oslo-middleware
+BuildRequires: python2-oslo-policy
+BuildRequires: python2-oslo-serialization
+BuildRequires: python2-oslo-service
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-oslo-versionedobjects
 BuildRequires: python2-oslo-versionedobjects-tests
-BuildRequires: python-oslo-reports
+BuildRequires: python2-oslo-reports
 
-BuildRequires: python-pecan
+BuildRequires: python2-pecan
 
-BuildRequires: python-barbicanclient
-BuildRequires: python-glanceclient
-BuildRequires: python-heatclient
-BuildRequires: python-neutronclient
-BuildRequires: python-novaclient
-BuildRequires: python-kubernetes
-BuildRequires: python-keystoneclient
+BuildRequires: python2-barbicanclient
+BuildRequires: python2-glanceclient
+BuildRequires: python2-heatclient
+BuildRequires: python2-neutronclient
+BuildRequires: python2-novaclient
+BuildRequires: python2-kubernetes
+BuildRequires: python2-keystoneclient
 
-BuildRequires: python-requests
-BuildRequires: python-six
-BuildRequires: python-stevedore
-BuildRequires: python-taskflow
-BuildRequires: python-cryptography
-BuildRequires: python-marathon
+BuildRequires: python2-requests
+BuildRequires: python2-six
+BuildRequires: python2-stevedore
+BuildRequires: python2-taskflow
+BuildRequires: python2-cryptography
+BuildRequires: python2-marathon
 
 %description -n python-%{service}-tests
 %{common_desc}
