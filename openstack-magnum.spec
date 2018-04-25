@@ -232,7 +232,8 @@ find contrib -name tests -type d | xargs rm -rf
 
 # docs generation requires everything to be installed first
 %if 0%{?with_doc}
-%{__python2} setup.py build_sphinx -b html
+export PYTHONPATH=.
+sphinx-build -W -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %endif
