@@ -158,7 +158,7 @@ BuildRequires:   python2-mock
 BuildRequires:   python2-oslotest
 BuildRequires:   python2-os-testr
 BuildRequires:   python2-subunit
-BuildRequires:   python2-testrepository
+BuildRequires:   python2-stestr
 BuildRequires:   python2-testscenarios
 BuildRequires:   python2-testtools
 BuildRequires:   python2-tempest
