@@ -260,7 +260,7 @@ rmdir %{buildroot}%{_prefix}/etc/%{service}
 %check
 # Remove hacking tests, we don't need them
 rm magnum/tests/unit/test_hacking.py
-%{__python2} setup.py test
+stestr --test-path=./magnum/tests/unit run
 
 %files -n python-%{service}
 %license LICENSE
