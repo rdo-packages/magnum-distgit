@@ -50,7 +50,7 @@ Requires: python2-wsme
 Requires: python-webob
 Requires: python2-alembic
 Requires: python-decorator
-Requires: python2-docker >= 2.0.0
+Requires: python2-docker >= 2.4.2
 Requires: python-enum34
 Requires: python2-eventlet
 Requires: python2-iso8601
@@ -58,8 +58,8 @@ Requires: python2-jsonpatch
 Requires: python2-keystonemiddleware >= 4.17.0
 Requires: python2-netaddr
 
-Requires: python2-oslo-concurrency >= 3.25.0
-Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-concurrency >= 3.26.0
+Requires: python2-oslo-config >= 2:5.2.0
 Requires: python2-oslo-context >= 2.19.2
 Requires: python2-oslo-db >= 4.27.0
 Requires: python2-oslo-i18n >= 3.15.3
@@ -77,14 +77,14 @@ Requires: python2-osprofiler
 Requires: python2-pycadf
 Requires: python2-pecan
 
-Requires: python2-barbicanclient >= 4.0.0
-Requires: python2-glanceclient >= 2.8.0
+Requires: python2-barbicanclient >= 4.5.2
+Requires: python2-glanceclient >= 1:2.8.0
 Requires: python2-heatclient >= 1.10.0
-Requires: python2-neutronclient >= 6.3.0
+Requires: python2-neutronclient >= 6.7.0
 Requires: python2-novaclient >= 9.1.0
 Requires: python2-kubernetes
 Requires: python2-keystoneclient >= 1:3.8.0
-Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-keystoneauth1 >= 3.4.0
 
 Requires: python2-cliff >= 2.8.0
 Requires: python2-requests
@@ -171,7 +171,7 @@ BuildRequires: python2-wsme
 BuildRequires: python-webob
 BuildRequires: python2-alembic
 BuildRequires: python-decorator
-BuildRequires: python2-docker >= 2.0.0
+BuildRequires: python2-docker >= 2.4.2
 BuildRequires: python-enum34
 BuildRequires: python2-eventlet
 BuildRequires: python2-iso8601
