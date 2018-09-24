@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 %global service magnum
@@ -22,15 +33,15 @@ Source3:	%{name}-conductor.service
 BuildArch: noarch
 
 BuildRequires: git
-BuildRequires: python2-devel
-BuildRequires: python2-pbr
-BuildRequires: python2-setuptools
-BuildRequires: python-werkzeug
+BuildRequires: python%{pyver}-devel
+BuildRequires: python%{pyver}-pbr
+BuildRequires: python%{pyver}-setuptools
+BuildRequires: python%{pyver}-werkzeug
 BuildRequires: systemd-units
 BuildRequires: openstack-macros
 # Required for config file generation
-BuildRequires: python2-pycadf
-BuildRequires: python2-osprofiler
+BuildRequires: python%{pyver}-pycadf
+BuildRequires: python%{pyver}-osprofiler
 
 Requires: %{name}-common = %{version}-%{release}
 Requires: %{name}-conductor = %{version}-%{release}
@@ -39,70 +50,78 @@ Requires: %{name}-api = %{version}-%{release}
 %description
 %{common_desc}
 
-%package -n python-%{service}
+%package -n python%{pyver}-%{service}
 Summary: Magnum Python libraries
+%{?python_provide:%python_provide python%{pyver}-%{service}}
 
-Requires: python2-pbr
-Requires: python2-babel
+Requires: python%{pyver}-pbr
+Requires: python%{pyver}-babel
+Requires: python%{pyver}-sqlalchemy
+Requires: python%{pyver}-wsme
+Requires: python%{pyver}-webob
+Requires: python%{pyver}-alembic
+Requires: python%{pyver}-docker >= 2.4.2
+Requires: python%{pyver}-eventlet
+Requires: python%{pyver}-iso8601
+Requires: python%{pyver}-jsonpatch
+Requires: python%{pyver}-keystonemiddleware >= 4.17.0
+Requires: python%{pyver}-netaddr
+
+Requires: python%{pyver}-oslo-concurrency >= 3.26.0
+Requires: python%{pyver}-oslo-config >= 2:5.2.0
+Requires: python%{pyver}-oslo-context >= 2.19.2
+Requires: python%{pyver}-oslo-db >= 4.27.0
+Requires: python%{pyver}-oslo-i18n >= 3.15.3
+Requires: python%{pyver}-oslo-log >= 3.36.0
+Requires: python%{pyver}-oslo-messaging >= 5.29.0
+Requires: python%{pyver}-oslo-middleware >= 3.31.0
+Requires: python%{pyver}-oslo-policy >= 1.30.0
+Requires: python%{pyver}-oslo-serialization >= 2.18.0
+Requires: python%{pyver}-oslo-service >= 1.24.0
+Requires: python%{pyver}-oslo-utils >= 3.33.0
+Requires: python%{pyver}-oslo-versionedobjects >= 1.31.2
+Requires: python%{pyver}-oslo-reports >= 1.18.0
+Requires: python%{pyver}-osprofiler
+
+Requires: python%{pyver}-pycadf
+Requires: python%{pyver}-pecan
+
+Requires: python%{pyver}-barbicanclient >= 4.5.2
+Requires: python%{pyver}-glanceclient >= 1:2.8.0
+Requires: python%{pyver}-heatclient >= 1.10.0
+Requires: python%{pyver}-neutronclient >= 6.7.0
+Requires: python%{pyver}-novaclient >= 9.1.0
+Requires: python%{pyver}-kubernetes
+Requires: python%{pyver}-keystoneclient >= 1:3.8.0
+Requires: python%{pyver}-keystoneauth1 >= 3.4.0
+
+Requires: python%{pyver}-cliff >= 2.8.0
+Requires: python%{pyver}-requests
+Requires: python%{pyver}-six
+Requires: python%{pyver}-stevedore >= 1.20.0
+Requires: python%{pyver}-taskflow
+Requires: python%{pyver}-cryptography
+Requires: python%{pyver}-werkzeug
+Requires: python%{pyver}-marathon
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires: PyYAML
-Requires: python2-sqlalchemy
-Requires: python2-wsme
-Requires: python-webob
-Requires: python2-alembic
 Requires: python-decorator
-Requires: python2-docker >= 2.4.2
 Requires: python-enum34
-Requires: python2-eventlet
-Requires: python2-iso8601
-Requires: python2-jsonpatch
-Requires: python2-keystonemiddleware >= 4.17.0
-Requires: python2-netaddr
-
-Requires: python2-oslo-concurrency >= 3.26.0
-Requires: python2-oslo-config >= 2:5.2.0
-Requires: python2-oslo-context >= 2.19.2
-Requires: python2-oslo-db >= 4.27.0
-Requires: python2-oslo-i18n >= 3.15.3
-Requires: python2-oslo-log >= 3.36.0
-Requires: python2-oslo-messaging >= 5.29.0
-Requires: python2-oslo-middleware >= 3.31.0
-Requires: python2-oslo-policy >= 1.30.0
-Requires: python2-oslo-serialization >= 2.18.0
-Requires: python2-oslo-service >= 1.24.0
-Requires: python2-oslo-utils >= 3.33.0
-Requires: python2-oslo-versionedobjects >= 1.31.2
-Requires: python2-oslo-reports >= 1.18.0
-Requires: python2-osprofiler
-
-Requires: python2-pycadf
-Requires: python2-pecan
-
-Requires: python2-barbicanclient >= 4.5.2
-Requires: python2-glanceclient >= 1:2.8.0
-Requires: python2-heatclient >= 1.10.0
-Requires: python2-neutronclient >= 6.7.0
-Requires: python2-novaclient >= 9.1.0
-Requires: python2-kubernetes
-Requires: python2-keystoneclient >= 1:3.8.0
-Requires: python2-keystoneauth1 >= 3.4.0
-
-Requires: python2-cliff >= 2.8.0
-Requires: python2-requests
-Requires: python2-six
-Requires: python2-stevedore >= 1.20.0
-Requires: python2-taskflow
-Requires: python2-cryptography
-Requires: python-werkzeug
-Requires: python2-marathon
+%else
+Requires: python%{pyver}-PyYAML
+Requires: python%{pyver}-decorator
+%endif
 
 
-%description -n python-%{service}
+%description -n python%{pyver}-%{service}
 %{common_desc}
 
 %package common
 Summary: Magnum common
 
-Requires: python-%{service} = %{version}-%{release}
+Requires: python%{pyver}-%{service} = %{version}-%{release}
 
 Requires(pre): shadow-utils
 
@@ -133,11 +152,11 @@ OpenStack-native ReST API to the Magnum Engine
 %package -n %{name}-doc
 Summary:    Documentation for OpenStack Magnum
 
-Requires:    python-%{service} = %{version}-%{release}
+Requires:    python%{pyver}-%{service} = %{version}-%{release}
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-stevedore
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-stevedore
 BuildRequires:  graphviz
 
 %description -n %{name}-doc
@@ -147,72 +166,80 @@ This package contains documentation files for Magnum.
 %endif
 
 # tests
-%package -n python-%{service}-tests
+%package -n python%{pyver}-%{service}-tests
 Summary:          Tests for OpenStack Magnum
+%{?python_provide:%python_provide python%{pyver}-%{service}-tests}
 
-Requires:        python-%{service} = %{version}-%{release}
+Requires:        python%{pyver}-%{service} = %{version}-%{release}
 
-BuildRequires:   python2-fixtures
-BuildRequires:   python2-hacking
-BuildRequires:   python2-mock
-BuildRequires:   python2-oslotest
-BuildRequires:   python2-os-testr
-BuildRequires:   python2-subunit
-BuildRequires:   python2-stestr
-BuildRequires:   python2-testscenarios
-BuildRequires:   python2-testtools
-BuildRequires:   python2-tempest
+BuildRequires:   python%{pyver}-fixtures
+BuildRequires:   python%{pyver}-hacking
+BuildRequires:   python%{pyver}-mock
+BuildRequires:   python%{pyver}-oslotest
+BuildRequires:   python%{pyver}-os-testr
+BuildRequires:   python%{pyver}-subunit
+BuildRequires:   python%{pyver}-stestr
+BuildRequires:   python%{pyver}-testscenarios
+BuildRequires:   python%{pyver}-testtools
+BuildRequires:   python%{pyver}-tempest
 
 # copy-paste from runtime Requires
-BuildRequires: python2-babel
+BuildRequires: python%{pyver}-babel
+BuildRequires: python%{pyver}-sqlalchemy
+BuildRequires: python%{pyver}-wsme
+BuildRequires: python%{pyver}-webob
+BuildRequires: python%{pyver}-alembic
+BuildRequires: python%{pyver}-docker >= 2.4.2
+BuildRequires: python%{pyver}-eventlet
+BuildRequires: python%{pyver}-iso8601
+BuildRequires: python%{pyver}-jsonpatch
+BuildRequires: python%{pyver}-keystonemiddleware
+BuildRequires: python%{pyver}-netaddr
+
+BuildRequires: python%{pyver}-oslo-concurrency
+BuildRequires: python%{pyver}-oslo-config
+BuildRequires: python%{pyver}-oslo-context
+BuildRequires: python%{pyver}-oslo-db
+BuildRequires: python%{pyver}-oslo-i18n
+BuildRequires: python%{pyver}-oslo-log
+BuildRequires: python%{pyver}-oslo-messaging
+BuildRequires: python%{pyver}-oslo-middleware
+BuildRequires: python%{pyver}-oslo-policy
+BuildRequires: python%{pyver}-oslo-serialization
+BuildRequires: python%{pyver}-oslo-service
+BuildRequires: python%{pyver}-oslo-utils
+BuildRequires: python%{pyver}-oslo-versionedobjects
+BuildRequires: python%{pyver}-oslo-versionedobjects-tests
+BuildRequires: python%{pyver}-oslo-reports
+
+BuildRequires: python%{pyver}-pecan
+
+BuildRequires: python%{pyver}-barbicanclient
+BuildRequires: python%{pyver}-glanceclient
+BuildRequires: python%{pyver}-heatclient
+BuildRequires: python%{pyver}-neutronclient
+BuildRequires: python%{pyver}-novaclient
+BuildRequires: python%{pyver}-kubernetes
+BuildRequires: python%{pyver}-keystoneclient
+
+BuildRequires: python%{pyver}-requests
+BuildRequires: python%{pyver}-six
+BuildRequires: python%{pyver}-stevedore
+BuildRequires: python%{pyver}-taskflow
+BuildRequires: python%{pyver}-cryptography
+BuildRequires: python%{pyver}-marathon
+
+# Handle python2 exception
+%if %{pyver} == 2
 BuildRequires: PyYAML
-BuildRequires: python2-sqlalchemy
-BuildRequires: python2-wsme
-BuildRequires: python-webob
-BuildRequires: python2-alembic
 BuildRequires: python-decorator
-BuildRequires: python2-docker >= 2.4.2
 BuildRequires: python-enum34
-BuildRequires: python2-eventlet
-BuildRequires: python2-iso8601
-BuildRequires: python2-jsonpatch
-BuildRequires: python2-keystonemiddleware
-BuildRequires: python2-netaddr
+%else
+BuildRequires: python%{pyver}-PyYAML
+BuildRequires: python%{pyver}-decorator
+%endif
 
-BuildRequires: python2-oslo-concurrency
-BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-context
-BuildRequires: python2-oslo-db
-BuildRequires: python2-oslo-i18n
-BuildRequires: python2-oslo-log
-BuildRequires: python2-oslo-messaging
-BuildRequires: python2-oslo-middleware
-BuildRequires: python2-oslo-policy
-BuildRequires: python2-oslo-serialization
-BuildRequires: python2-oslo-service
-BuildRequires: python2-oslo-utils
-BuildRequires: python2-oslo-versionedobjects
-BuildRequires: python2-oslo-versionedobjects-tests
-BuildRequires: python2-oslo-reports
-
-BuildRequires: python2-pecan
-
-BuildRequires: python2-barbicanclient
-BuildRequires: python2-glanceclient
-BuildRequires: python2-heatclient
-BuildRequires: python2-neutronclient
-BuildRequires: python2-novaclient
-BuildRequires: python2-kubernetes
-BuildRequires: python2-keystoneclient
-
-BuildRequires: python2-requests
-BuildRequires: python2-six
-BuildRequires: python2-stevedore
-BuildRequires: python2-taskflow
-BuildRequires: python2-cryptography
-BuildRequires: python2-marathon
-
-%description -n python-%{service}-tests
+%description -n python%{pyver}-%{service}-tests
 %{common_desc}
 
 %prep
@@ -225,15 +252,15 @@ rm -rf {test-,}requirements{-bandit,}.txt tools/{pip,test}-requires
 find contrib -name tests -type d | xargs rm -rf
 
 %build
-%{__python2} setup.py build
+%{pyver_build}
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+%{pyver_install}
 
 # docs generation requires everything to be installed first
 %if 0%{?with_doc}
 export PYTHONPATH=.
-sphinx-build -W -b html doc/source doc/build/html
+sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %endif
@@ -250,7 +277,7 @@ mkdir -p %{buildroot}%{_sharedstatedir}/%{service}/
 mkdir -p %{buildroot}%{_sharedstatedir}/%{service}/certificates/
 mkdir -p %{buildroot}%{_sysconfdir}/%{service}/
 
-oslo-config-generator --config-file etc/%{service}/magnum-config-generator.conf --output-file %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
+oslo-config-generator-%{pyver} --config-file etc/%{service}/magnum-config-generator.conf --output-file %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 chmod 640 %{buildroot}%{_sysconfdir}/%{service}/magnum.conf
 mv %{buildroot}%{_prefix}/etc/%{service}/api-paste.ini %{buildroot}%{_sysconfdir}/%{service}
 
@@ -260,13 +287,13 @@ rmdir %{buildroot}%{_prefix}/etc/%{service}
 %check
 # Remove hacking tests, we don't need them
 rm magnum/tests/unit/test_hacking.py
-stestr --test-path=./magnum/tests/unit run
+stestr-%{pyver} --test-path=./magnum/tests/unit run
 
-%files -n python-%{service}
+%files -n python%{pyver}-%{service}
 %license LICENSE
-%{python2_sitelib}/%{service}
-%{python2_sitelib}/%{service}-*.egg-info
-%exclude %{python2_sitelib}/%{service}/tests
+%{pyver_sitelib}/%{service}
+%{pyver_sitelib}/%{service}-*.egg-info
+%exclude %{pyver_sitelib}/%{service}/tests
 
 
 %files common
@@ -319,9 +346,9 @@ exit 0
 %doc doc/build/html
 %endif
 
-%files -n python-%{service}-tests
+%files -n python%{pyver}-%{service}-tests
 %license LICENSE
-%{python2_sitelib}/%{service}/tests
+%{pyver_sitelib}/%{service}/tests
 
 %post api
 %systemd_post %{name}-api.service
