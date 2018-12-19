@@ -58,6 +58,7 @@ Requires: python2-jsonpatch
 Requires: python2-keystonemiddleware >= 4.17.0
 Requires: python2-netaddr
 
+Requires: python2-octaviaclient >= 1.6.0
 Requires: python2-oslo-concurrency >= 3.26.0
 Requires: python2-oslo-config >= 2:5.2.0
 Requires: python2-oslo-context >= 2.19.2
@@ -179,6 +180,7 @@ BuildRequires: python2-jsonpatch
 BuildRequires: python2-keystonemiddleware
 BuildRequires: python2-netaddr
 
+BuildRequires: python2-octaviaclient
 BuildRequires: python2-oslo-concurrency
 BuildRequires: python2-oslo-config
 BuildRequires: python2-oslo-context
@@ -341,4 +343,3 @@ exit 0
 
 * Thu Aug 16 2018 RDO <dev@lists.rdoproject.org> 7.0.0-1
 - Update to 7.0.0
-
