@@ -81,6 +81,7 @@ Requires: python%{pyver}-oslo-service >= 1.24.0
 Requires: python%{pyver}-oslo-utils >= 3.33.0
 Requires: python%{pyver}-oslo-versionedobjects >= 1.31.2
 Requires: python%{pyver}-oslo-reports >= 1.18.0
+Requires: python%{pyver}-oslo-upgradecheck >= 0.1.1
 Requires: python%{pyver}-osprofiler
 
 Requires: python%{pyver}-pycadf
@@ -212,6 +213,7 @@ BuildRequires: python%{pyver}-oslo-utils
 BuildRequires: python%{pyver}-oslo-versionedobjects
 BuildRequires: python%{pyver}-oslo-versionedobjects-tests
 BuildRequires: python%{pyver}-oslo-reports
+BuildRequires: python%{pyver}-oslo-upgradecheck
 
 BuildRequires: python%{pyver}-pecan
 
@@ -301,6 +303,7 @@ stestr-%{pyver} --test-path=./magnum/tests/unit run
 %files common
 %{_bindir}/magnum-db-manage
 %{_bindir}/magnum-driver-manage
+%{_bindir}/magnum-status
 %license LICENSE
 %dir %attr(0750,%{service},root) %{_localstatedir}/log/%{service}
 %dir %attr(0755,%{service},root) %{_localstatedir}/run/%{service}
