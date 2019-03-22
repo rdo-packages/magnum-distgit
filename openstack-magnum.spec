@@ -24,7 +24,7 @@ Release:	XXX
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
-Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{version}.tar.gz
+Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
 
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
@@ -183,7 +183,6 @@ BuildRequires:   python%{pyver}-subunit
 BuildRequires:   python%{pyver}-stestr
 BuildRequires:   python%{pyver}-testscenarios
 BuildRequires:   python%{pyver}-testtools
-BuildRequires:   python%{pyver}-tempest
 
 # copy-paste from runtime Requires
 BuildRequires: python%{pyver}-babel
