@@ -290,7 +290,7 @@ rmdir %{buildroot}%{_prefix}/etc/%{service}
 %check
 # Remove hacking tests, we don't need them
 rm magnum/tests/unit/test_hacking.py
-stestr-%{pyver} --test-path=./magnum/tests/unit run
+PYTHON=%{pyver_bin} stestr-%{pyver} --test-path=./magnum/tests/unit run
 
 %files -n python%{pyver}-%{service}
 %license LICENSE
