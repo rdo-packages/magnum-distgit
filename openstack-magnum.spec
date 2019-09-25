@@ -96,6 +96,7 @@ Requires: python%{pyver}-kubernetes
 Requires: python%{pyver}-keystoneclient >= 1:3.8.0
 Requires: python%{pyver}-keystoneauth1 >= 3.4.0
 Requires: python%{pyver}-octaviaclient >= 1.6.0
+Requires: python%{pyver}-cinderclient >= 2.2.0
 
 Requires: python%{pyver}-cliff >= 2.8.0
 Requires: python%{pyver}-requests
@@ -224,6 +225,7 @@ BuildRequires: python%{pyver}-novaclient
 BuildRequires: python%{pyver}-kubernetes
 BuildRequires: python%{pyver}-keystoneclient
 BuildRequires: python%{pyver}-octaviaclient
+BuildRequires: python%{pyver}-cinderclient
 
 BuildRequires: python%{pyver}-requests
 BuildRequires: python%{pyver}-six
