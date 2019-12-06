@@ -343,6 +343,7 @@ exit 0
 %doc README.rst
 %license LICENSE
 %{_bindir}/magnum-api
+%{_bindir}/magnum-api-wsgi
 %{_unitdir}/%{name}-api.service
 
 
