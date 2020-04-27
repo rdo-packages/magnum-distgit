@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a9eead2_f2c70ee6",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2020-04-27T13:35:06Z",
+      "side": 1,
+      "message": "I think we may want to limit concurrency in the unit test run to avoid the issue we saw in the first iteration (it\u0027s happened a few times before).",
+      "revId": "9e4d5fc93b56de8d5f450438e7182725449cd21c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
