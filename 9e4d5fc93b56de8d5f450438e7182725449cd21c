@@ -34,6 +34,24 @@
       "revId": "9e4d5fc93b56de8d5f450438e7182725449cd21c",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5c6279_8193349e",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-30T05:24:16Z",
+      "side": 1,
+      "message": "i think jpena means https://github.com/rdo-packages/magnum-distgit/blob/train-rdo/openstack-magnum.spec#L297",
+      "parentUuid": "4aa41427_cc01fdc7",
+      "revId": "9e4d5fc93b56de8d5f450438e7182725449cd21c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
