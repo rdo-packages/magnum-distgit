@@ -230,6 +230,8 @@ BuildRequires: python3-marathon
 
 BuildRequires: python3-PyYAML
 BuildRequires: python3-decorator
+BuildRequires: vim
+Requires: vim
 
 %description -n python3-%{service}-tests
 %{common_desc}
