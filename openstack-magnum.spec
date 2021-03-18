@@ -55,61 +55,63 @@ Requires: %{name}-api = %{version}-%{release}
 Summary: Magnum Python libraries
 %{?python_provide:%python_provide python3-%{service}}
 
-Requires: python3-pbr
-Requires: python3-babel
-Requires: python3-sqlalchemy
-Requires: python3-wsme
-Requires: python3-webob
-Requires: python3-alembic
-Requires: python3-docker >= 2.4.2
-Requires: python3-eventlet
-Requires: python3-iso8601
-Requires: python3-jsonpatch
-Requires: python3-keystonemiddleware >= 4.17.0
-Requires: python3-netaddr
+Requires: python3-pbr >= 5.5.0
+Requires: python3-babel >= 2.3.4
+Requires: python3-sqlalchemy >= 1.2.0
+Requires: python3-wsme >= 0.8.0
+Requires: python3-webob >= 1.8.1
+Requires: python3-alembic >= 0.9.6
+Requires: python3-docker >= 4.2.1
+Requires: python3-eventlet >= 0.28.0
+Requires: python3-iso8601 >= 0.1.11
+Requires: python3-jsonpatch >= 1.16
+Requires: python3-keystonemiddleware >= 9.0.0
+Requires: python3-netaddr >= 0.7.18
 
-Requires: python3-oslo-concurrency >= 3.26.0
-Requires: python3-oslo-config >= 2:5.2.0
-Requires: python3-oslo-context >= 2.19.2
-Requires: python3-oslo-db >= 4.27.0
-Requires: python3-oslo-i18n >= 3.15.3
-Requires: python3-oslo-log >= 3.36.0
-Requires: python3-oslo-messaging >= 5.29.0
-Requires: python3-oslo-middleware >= 3.31.0
-Requires: python3-oslo-policy >= 1.30.0
-Requires: python3-oslo-serialization >= 2.18.0
-Requires: python3-oslo-service >= 1.24.0
-Requires: python3-oslo-utils >= 3.33.0
-Requires: python3-oslo-versionedobjects >= 1.31.2
-Requires: python3-oslo-reports >= 1.18.0
-Requires: python3-oslo-upgradecheck >= 0.1.1
+Requires: python3-oslo-concurrency >= 4.1.0
+Requires: python3-oslo-config >= 2:8.1.0
+Requires: python3-oslo-context >= 3.1.0
+Requires: python3-oslo-db >= 8.2.0
+Requires: python3-oslo-i18n >= 5.0.0
+Requires: python3-oslo-log >= 4.2.0
+Requires: python3-oslo-messaging >= 12.2.0
+Requires: python3-oslo-middleware >= 4.1.0
+Requires: python3-oslo-policy >= 3.6.0
+Requires: python3-oslo-serialization >= 3.2.0
+Requires: python3-oslo-service >= 2.2.0
+Requires: python3-oslo-utils >= 4.2.0
+Requires: python3-oslo-versionedobjects >= 2.1.0
+Requires: python3-oslo-reports >= 2.1.0
+Requires: python3-oslo-upgradecheck >= 1.3.0
 Requires: python3-osprofiler
 
-Requires: python3-pycadf
-Requires: python3-pecan
+Requires: python3-pycadf >= 1.1.0
+Requires: python3-pecan >= 1.3.3
 
-Requires: python3-barbicanclient >= 4.5.2
-Requires: python3-glanceclient >= 1:2.8.0
-Requires: python3-heatclient >= 1.10.0
-Requires: python3-neutronclient >= 6.7.0
-Requires: python3-novaclient >= 9.1.0
-Requires: python3-kubernetes
-Requires: python3-keystoneclient >= 1:3.8.0
-Requires: python3-keystoneauth1 >= 3.4.0
-Requires: python3-octaviaclient >= 1.6.0
-Requires: python3-cinderclient >= 2.2.0
+Requires: python3-barbicanclient >= 5.0.0
+Requires: python3-glanceclient >= 1:3.2.0
+Requires: python3-heatclient >= 2.2.0
+Requires: python3-neutronclient >= 7.2.0
+Requires: python3-novaclient >= 17.2.0
+Requires: python3-kubernetes >= 11.0.0
+Requires: python3-keystoneclient >= 1:3.20.0
+Requires: python3-keystoneauth1 >= 3.14.0
+Requires: python3-octaviaclient >= 2.1.0
+Requires: python3-cinderclient >= 7.1.0
 
 Requires: python3-cliff >= 2.8.0
-Requires: python3-requests
-Requires: python3-six
-Requires: python3-stevedore >= 1.20.0
-Requires: python3-taskflow
-Requires: python3-cryptography
-Requires: python3-werkzeug
-Requires: python3-marathon
+Requires: python3-requests >= 2.20.1
+Requires: python3-six >= 1.10.0
+Requires: python3-stevedore >= 3.3.0
+Requires: python3-taskflow >= 2.16.0
+Requires: python3-cryptography >= 2.1.4
+Requires: python3-werkzeug >= 0.9
+Requires: python3-marathon >= 0.8.6
 
 Requires: python3-PyYAML
-Requires: python3-decorator
+Requires: python3-decorator >= 3.4.0
+Requires: python3-setuptools >= 30.0.0
+Requires: python3-yaml >= 3.13
 
 
 %description -n python3-%{service}
@@ -185,7 +187,7 @@ BuildRequires: python3-sqlalchemy
 BuildRequires: python3-wsme
 BuildRequires: python3-webob
 BuildRequires: python3-alembic
-BuildRequires: python3-docker >= 2.4.2
+BuildRequires: python3-docker >= 4.2.1
 BuildRequires: python3-eventlet
 BuildRequires: python3-iso8601
 BuildRequires: python3-jsonpatch
