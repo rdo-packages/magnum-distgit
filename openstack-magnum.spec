@@ -1,5 +1,6 @@
+%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 %global service magnum
@@ -10,12 +11,16 @@ provisioning, scaling, and managing container orchestration engines.
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	XXX
-Release:	XXX
+Version:	12.0.0
+Release:	0.1%{?milestone}%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
+
+#
+# patches_base=12.0.0.0rc1
+#
 
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
@@ -362,3 +367,6 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Fri Mar 26 2021 RDO <dev@lists.rdoproject.org> 12.0.0-0.1.0rc1
+- Update to 12.0.0.0rc1
+
