@@ -11,7 +11,7 @@ provisioning, scaling, and managing container orchestration engines.
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	11.1.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
@@ -90,6 +90,7 @@ Requires: python3-osprofiler
 Requires: python3-pycadf
 Requires: python3-pecan
 
+Requires: python3-magnumclient >= 3.1.0
 Requires: python3-barbicanclient >= 4.5.2
 Requires: python3-glanceclient >= 1:2.8.0
 Requires: python3-heatclient >= 1.10.0
@@ -360,6 +361,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Thu Apr 22 2021 Tobias Urdin <tobias.urdin@binero.com> 11.1.0-2
+- Add python3-magnumclient dependency
+
 * Fri Apr 09 2021 RDO <dev@lists.rdoproject.org> 11.1.0-1
 - Update to 11.1.0
 
