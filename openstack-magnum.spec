@@ -362,3 +362,4 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/magnum/commit/b2e20a11432103b664bafc0862252122063c32e6
