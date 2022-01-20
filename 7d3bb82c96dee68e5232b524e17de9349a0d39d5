@@ -16,6 +16,23 @@
       "message": "what is the issue? https://review.opendev.org/c/openstack/magnum/+/825518",
       "revId": "7d3bb82c96dee68e5232b524e17de9349a0d39d5",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d140bed_4d41c547",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2022-01-20T16:11:47Z",
+      "side": 1,
+      "message": "pyyaml?",
+      "revId": "7d3bb82c96dee68e5232b524e17de9349a0d39d5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
