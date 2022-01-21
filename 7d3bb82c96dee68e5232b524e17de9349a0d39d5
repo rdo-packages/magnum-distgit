@@ -33,6 +33,24 @@
       "message": "pyyaml?",
       "revId": "7d3bb82c96dee68e5232b524e17de9349a0d39d5",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1928b35_2281e97e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2022-01-21T14:38:58Z",
+      "side": 1,
+      "message": "Yes ^ caused the issue, specifically https://review.opendev.org/c/openstack/magnum/+/825518/1/doc/source/user/index.rst. If labels were used there then also issue wouldn\u0027t have seen.\n\nin RDO currently we have sphinx-2.2.2, the issue is reproducable with ^ patch and sphinx\u003c\u003d4.4.0. upper-constraints is Sphinx\u003d\u003d\u003d4.4.0, so we can try getting it updated in RDO to clear this.\n\nTo workaround until then can drop -W option from sphinx-build command[1] to not treat warning as errors.\n\n[1] https://github.com/rdo-packages/magnum-distgit/blob/rpm-master/openstack-magnum.spec#L263",
+      "parentUuid": "a833aedf_5d855a81",
+      "revId": "7d3bb82c96dee68e5232b524e17de9349a0d39d5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
