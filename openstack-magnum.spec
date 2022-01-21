@@ -93,7 +93,6 @@ Requires: python3-glanceclient >= 1:3.2.0
 Requires: python3-heatclient >= 2.2.0
 Requires: python3-neutronclient >= 7.2.0
 Requires: python3-novaclient >= 17.2.0
-Requires: python3-kubernetes >= 11.0.0
 Requires: python3-keystoneclient >= 1:3.20.0
 Requires: python3-keystoneauth1 >= 3.14.0
 Requires: python3-octaviaclient >= 2.1.0
@@ -218,12 +217,12 @@ BuildRequires: python3-glanceclient
 BuildRequires: python3-heatclient
 BuildRequires: python3-neutronclient
 BuildRequires: python3-novaclient
-BuildRequires: python3-kubernetes
 BuildRequires: python3-keystoneclient
 BuildRequires: python3-octaviaclient
 BuildRequires: python3-cinderclient
 
 BuildRequires: python3-requests
+BuildRequires: python3-requests-mock
 BuildRequires: python3-six
 BuildRequires: python3-stevedore
 BuildRequires: python3-taskflow
@@ -260,7 +259,7 @@ find contrib -name tests -type d | xargs rm -rf
 # docs generation requires everything to be installed first
 %if 0%{?with_doc}
 export PYTHONPATH=.
-sphinx-build -W -b html doc/source doc/build/html
+sphinx-build -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %endif
