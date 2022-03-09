@@ -61,7 +61,7 @@ Requires: python3-sqlalchemy >= 1.2.0
 Requires: python3-wsme >= 0.8.0
 Requires: python3-webob >= 1.8.1
 Requires: python3-alembic >= 0.9.6
-Requires: python3-docker >= 4.2.1
+Requires: python3-docker >= 4.3.0
 Requires: python3-eventlet >= 0.28.0
 Requires: python3-iso8601 >= 0.1.11
 Requires: python3-jsonpatch >= 1.16
@@ -186,7 +186,7 @@ BuildRequires: python3-sqlalchemy
 BuildRequires: python3-wsme
 BuildRequires: python3-webob
 BuildRequires: python3-alembic
-BuildRequires: python3-docker >= 4.2.1
+BuildRequires: python3-docker >= 4.3.0
 BuildRequires: python3-eventlet
 BuildRequires: python3-iso8601
 BuildRequires: python3-jsonpatch
