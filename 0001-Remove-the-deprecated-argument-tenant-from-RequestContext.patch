@@ -1,0 +1,29 @@
+From b22bdb22ffe6b0c091631e0abb56f3ea80bd48f4 Mon Sep 17 00:00:00 2001
+From: Jake Yip <jake.yip@ardc.edu.au>
+Date: Thu, 10 Mar 2022 11:19:26 +1100
+Subject: [PATCH] Remove the deprecated argument tenant from RequestContext
+
+Change I2fded6f3476df1fb8c4e042ef28ed8ccb7ab0737 in oslo_context removed
+the long deprecated tenant argument. Change it in magnum.
+
+Change-Id: Ie30c41b2c5c41a38c25c60f089bebb048328989a
+---
+ magnum/common/context.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/magnum/common/context.py b/magnum/common/context.py
+index 44b2bce0..547c9cc9 100644
+--- a/magnum/common/context.py
++++ b/magnum/common/context.py
+@@ -42,7 +42,7 @@ class RequestContext(context.RequestContext):
+         """
+         super(RequestContext, self).__init__(auth_token=auth_token,
+                                              user_id=user_name,
+-                                             tenant=project_name,
++                                             project_id=project_name,
+                                              is_admin=is_admin,
+                                              read_only=read_only,
+                                              show_deleted=show_deleted,
+-- 
+2.35.1
+
