@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "518f2433_5b017758",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-03-22T13:25:39Z",
+      "side": 1,
+      "message": "DLRN is building post RC1 which already contains the patch [1] we\u0027re applying here. That\u0027s why\nthe patch cannot applied.\nFor sure it will be available in RC2, but in the meantime let\u0027s exclude this patch for DLRN.\n\n[1] https://github.com/openstack/magnum/commit/cd113dfc0c026b2a94e3e347f2ed4c114e5478d1 ",
+      "revId": "abd9e661f23edcbca6246b6614d09fef8d8035ba",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5891eb80_d572965b",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-03-22T13:25:39Z",
+      "side": 1,
+      "message": "let\u0027s wrap it with %if 0%{!?dlrn} ... %endif",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 83
+      },
+      "revId": "abd9e661f23edcbca6246b6614d09fef8d8035ba",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
