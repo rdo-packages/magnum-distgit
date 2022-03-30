@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -12,21 +11,11 @@ provisioning, scaling, and managing container orchestration engines.
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	14.0.0
-Release:	0.1%{?milestone}%{?dist}
+Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
-
-# TODO(kkula): patch to be removed once https://review.opendev.org/c/openstack/magnum/+/832877
-# will be ready
-%if 0%{?dlrn} == 0
-Patch0001:     0001-Remove-the-deprecated-argument-tenant-from-RequestContext.patch
-%endif
-
-#
-# patches_base=14.0.0.0rc1
-#
 
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
@@ -372,6 +361,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Wed Mar 30 2022 RDO <dev@lists.rdoproject.org> 14.0.0-1
+- Update to 14.0.0
+
 * Tue Mar 22 2022 RDO <dev@lists.rdoproject.org> 14.0.0-0.1.0rc1
 - Update to 14.0.0.0rc1
 
