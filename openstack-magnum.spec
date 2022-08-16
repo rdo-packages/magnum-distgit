@@ -179,6 +179,7 @@ BuildRequires:   python3-subunit
 BuildRequires:   python3-stestr
 BuildRequires:   python3-testscenarios
 BuildRequires:   python3-testtools
+BuildRequires:   python3-webtest
 
 # copy-paste from runtime Requires
 BuildRequires: python3-babel
