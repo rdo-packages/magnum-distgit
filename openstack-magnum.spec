@@ -11,7 +11,7 @@ provisioning, scaling, and managing container orchestration engines.
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	12.1.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
@@ -26,6 +26,7 @@ Source3:	%{name}-conductor.service
 Source101:        https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
+Patch0001:  0001-Make-code-compatible-with-SQLAlchemy-1.4.18.patch
 
 BuildArch: noarch
 
@@ -363,6 +364,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Tue Aug 30 2022 Joel Capitao <jcapitao@redhat.com>  12.1.1-2
+- Make code compatible with SQLAlchemy 1.4.18
+
 * Thu Jun 30 2022 RDO <dev@lists.rdoproject.org> 12.1.1-1
 - Update to 12.1.1
 
