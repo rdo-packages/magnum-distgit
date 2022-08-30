@@ -1,0 +1,143 @@
+From fe4e1f6ad479d8d7468a69f2f509c9fc574afa9e Mon Sep 17 00:00:00 2001
+From: Bharat Kunwar <bharat@stackhpc.com>
+Date: Thu, 24 Jun 2021 16:01:54 +0000
+Subject: [PATCH] Make code compatible with SQLAlchemy 1.4.18
+
+Also, plugins do not need to enable any network service other than what
+devstack is already doing [1].
+
+Also, fix doc build:
+- bump up tox minversion to 3.18
+- set ignore_basepython_conflict to True [2]
+- add tex-gyre to binddep.txt [3]
+
+[1] https://review.opendev.org/c/openstack/devstack/+/791436
+[2] https://github.com/openstack/nova/blob/a0ec2de968cfded8b88c2f3af1152b5932d675b7/tox.ini#L7
+[3] https://review.opendev.org/c/openstack/openstack-health/+/793984
+
+Change-Id: Ib6e3ed40dc8b075c3cecb967b7417097e3cab60d
+Co-authored-by: Ghanshyam Mann <gmann@ghanshyammann.com>
+(cherry picked from commit b2e20a11432103b664bafc0862252122063c32e6)
+
+Ensure backward compatibility with SQLAlchemy<1.4
+
+In Ib6e3ed40dc8b075c3cecb967b7417097e3cab60d, a breaking change was
+introduced to suppose SQLAlchemy 1.4.x but this PS ensures backward
+compatibility with 1.3.x.
+
+Change-Id: I73ef4f99f02abc8b1083860f34a8a8e084ad96fd
+(cherry picked from commit ba75dce28ab75ca1035a9f52adc52cdaee2db931)
+---
+ magnum/db/sqlalchemy/api.py | 20 ++++++++++----------
+ tox.ini                     |  1 +
+ 2 files changed, 11 insertions(+), 10 deletions(-)
+
+diff --git a/magnum/db/sqlalchemy/api.py b/magnum/db/sqlalchemy/api.py
+index b206a173..868167f3 100644
+--- a/magnum/db/sqlalchemy/api.py
++++ b/magnum/db/sqlalchemy/api.py
+@@ -286,7 +286,7 @@ class Connection(api.Connection):
+             query = model_query(models.Cluster, session=session)
+             query = add_identity_filter(query, cluster_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.ClusterNotFound(cluster=cluster_id)
+ 
+@@ -344,7 +344,7 @@ class Connection(api.Connection):
+         query = self._add_tenant_filters(context, query)
+         public_q = model_query(models.ClusterTemplate).filter_by(public=True)
+         query = query.union(public_q)
+-        query = query.filter_by(id=cluster_template_id)
++        query = query.filter(models.ClusterTemplate.id==cluster_template_id)
+         try:
+             return query.one()
+         except NoResultFound:
+@@ -356,7 +356,7 @@ class Connection(api.Connection):
+         query = self._add_tenant_filters(context, query)
+         public_q = model_query(models.ClusterTemplate).filter_by(public=True)
+         query = query.union(public_q)
+-        query = query.filter_by(uuid=cluster_template_uuid)
++        query = query.filter(models.ClusterTemplate.uuid==cluster_template_uuid)
+         try:
+             return query.one()
+         except NoResultFound:
+@@ -368,7 +368,7 @@ class Connection(api.Connection):
+         query = self._add_tenant_filters(context, query)
+         public_q = model_query(models.ClusterTemplate).filter_by(public=True)
+         query = query.union(public_q)
+-        query = query.filter_by(name=cluster_template_name)
++        query = query.filter(models.ClusterTemplate.name==cluster_template_name)
+         try:
+             return query.one()
+         except MultipleResultsFound:
+@@ -427,7 +427,7 @@ class Connection(api.Connection):
+             query = model_query(models.ClusterTemplate, session=session)
+             query = add_identity_filter(query, cluster_template_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.ClusterTemplateNotFound(
+                     clustertemplate=cluster_template_id)
+@@ -497,7 +497,7 @@ class Connection(api.Connection):
+             query = model_query(models.X509KeyPair, session=session)
+             query = add_identity_filter(query, x509keypair_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.X509KeyPairNotFound(x509keypair=x509keypair_id)
+ 
+@@ -539,7 +539,7 @@ class Connection(api.Connection):
+             query = model_query(models.MagnumService, session=session)
+             query = add_identity_filter(query, magnum_service_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.MagnumServiceNotFound(
+                     magnum_service_id=magnum_service_id)
+@@ -623,7 +623,7 @@ class Connection(api.Connection):
+             try:
+                 query = query.filter_by(project_id=project_id).filter_by(
+                     resource=resource)
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 msg = (_('project_id %(project_id)s resource %(resource)s.') %
+                        {'project_id': project_id, 'resource': resource})
+@@ -775,7 +775,7 @@ class Connection(api.Connection):
+             query = model_query(models.Federation, session=session)
+             query = add_identity_filter(query, federation_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.FederationNotFound(federation=federation_id)
+ 
+@@ -837,7 +837,7 @@ class Connection(api.Connection):
+             query = add_identity_filter(query, nodegroup_id)
+             query = query.filter_by(cluster_id=cluster_id)
+             try:
+-                ref = query.with_lockmode('update').one()
++                ref = query.with_for_update().one()
+             except NoResultFound:
+                 raise exception.NodeGroupNotFound(nodegroup=nodegroup_id)
+ 
+diff --git a/tox.ini b/tox.ini
+index 172a5f89..3126ad39 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -2,6 +2,7 @@
+ minversion = 2.0
+ envlist = py37,pep8
+ skipsdist = True
++ignore_basepython_conflict = True
+ 
+ [testenv]
+ basepython = python3
+-- 
+2.37.1
+
