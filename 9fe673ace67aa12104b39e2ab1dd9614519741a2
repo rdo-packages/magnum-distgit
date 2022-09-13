@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a94ce0e_14fa02f2",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:35:36Z",
+      "side": 1,
+      "message": "4.6.1",
+      "range": {
+        "startLine": 75,
+        "startChar": 30,
+        "endLine": 75,
+        "endChar": 35
+      },
+      "revId": "9fe673ace67aa12104b39e2ab1dd9614519741a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e608d7a2_833fd174",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:35:36Z",
+      "side": 1,
+      "message": "we can remove it",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 1
+      },
+      "revId": "9fe673ace67aa12104b39e2ab1dd9614519741a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6891510_d12d0aa2",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:35:36Z",
+      "side": 1,
+      "message": "2.0.0",
+      "range": {
+        "startLine": 106,
+        "startChar": 30,
+        "endLine": 106,
+        "endChar": 33
+      },
+      "revId": "9fe673ace67aa12104b39e2ab1dd9614519741a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e836db59_b4d8eb3a",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:35:36Z",
+      "side": 1,
+      "message": "can be removed (just the \u003e\u003d 4.2.1)",
+      "range": {
+        "startLine": 188,
+        "startChar": 29,
+        "endLine": 188,
+        "endChar": 38
+      },
+      "revId": "9fe673ace67aa12104b39e2ab1dd9614519741a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0213dfd1_f58438b6",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:35:36Z",
+      "side": 1,
+      "message": "can be remove",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 1
+      },
+      "revId": "9fe673ace67aa12104b39e2ab1dd9614519741a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
