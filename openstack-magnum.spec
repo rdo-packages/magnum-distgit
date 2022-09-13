@@ -56,12 +56,11 @@ Summary: Magnum Python libraries
 %{?python_provide:%python_provide python3-%{service}}
 
 Requires: python3-pbr >= 5.5.0
-Requires: python3-babel >= 2.3.4
 Requires: python3-sqlalchemy >= 1.2.0
 Requires: python3-wsme >= 0.8.0
 Requires: python3-webob >= 1.8.1
 Requires: python3-alembic >= 0.9.6
-Requires: python3-docker >= 4.2.1
+Requires: python3-docker >= 4.3.0
 Requires: python3-eventlet >= 0.28.0
 Requires: python3-iso8601 >= 0.1.11
 Requires: python3-jsonpatch >= 1.16
@@ -182,7 +181,6 @@ BuildRequires:   python3-testtools
 BuildRequires:   python3-webtest
 
 # copy-paste from runtime Requires
-BuildRequires: python3-babel
 BuildRequires: python3-sqlalchemy
 BuildRequires: python3-wsme
 BuildRequires: python3-webob
