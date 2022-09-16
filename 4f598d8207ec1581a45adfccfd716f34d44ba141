@@ -22,6 +22,30 @@
       },
       "revId": "4f598d8207ec1581a45adfccfd716f34d44ba141",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7abba025_4aa82ec8",
+        "filename": "openstack-magnum.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-09-16T08:11:50Z",
+      "side": 0,
+      "message": "right, updating it ...",
+      "parentUuid": "6f4226aa_b0dd2a45",
+      "range": {
+        "startLine": 367,
+        "startChar": 0,
+        "endLine": 368,
+        "endChar": 45
+      },
+      "revId": "4f598d8207ec1581a45adfccfd716f34d44ba141",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
