@@ -26,7 +26,6 @@ Source3:	%{name}-conductor.service
 Source101:        https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
-Patch0001:  0001-Make-code-compatible-with-SQLAlchemy-1.4.18.patch
 
 BuildArch: noarch
 
