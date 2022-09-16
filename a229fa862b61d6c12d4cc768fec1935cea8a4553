@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad3124e8_6d7cf95f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-09-16T07:50:20Z",
+      "side": 1,
+      "message": "fix in https://review.rdoproject.org/r/c/openstack/magnum-distgit/+/44761",
+      "revId": "a229fa862b61d6c12d4cc768fec1935cea8a4553",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
