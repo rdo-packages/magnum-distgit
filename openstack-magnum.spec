@@ -1,4 +1,3 @@
-%global milestone .0rc2
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -12,13 +11,12 @@ provisioning, scaling, and managing container orchestration engines.
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	15.0.0
-Release:	0.2%{?milestone}%{?dist}
+Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
 
-# patches_base=15.0.0.0rc2
 
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
@@ -361,6 +359,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Wed Oct 05 2022 RDO <dev@lists.rdoproject.org> 15.0.0-1
+- Update to 15.0.0
+
 * Wed Sep 28 2022 RDO <dev@lists.rdoproject.org> 15.0.0-0.2.0rc1
 - Update to 15.0.0.0rc2
 
