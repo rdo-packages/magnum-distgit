@@ -59,6 +59,7 @@ Summary: Magnum Python libraries
 Requires: python3-pbr >= 5.5.0
 Requires: python3-babel >= 2.3.4
 Requires: python3-sqlalchemy >= 1.2.0
+Requires: python3-sqlalchemy < 1.4.0
 Requires: python3-wsme >= 0.8.0
 Requires: python3-webob >= 1.8.1
 Requires: python3-alembic >= 0.9.6
