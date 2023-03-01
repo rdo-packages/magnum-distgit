@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2e21f59_51a6084e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2023-03-01T06:09:49Z",
+      "side": 1,
+      "message": "pushed https://review.rdoproject.org/r/c/rdoinfo/+/47266 to pin to eol tags",
+      "revId": "c5f729d5b75ad0fe55126b60e0abc296db717311",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
