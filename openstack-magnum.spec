@@ -392,3 +392,4 @@ exit 0
 * Mon Sep 30 2019 RDO <dev@lists.rdoproject.org> 9.0.0-0.1.0rc1
 - Update to 9.0.0.0rc1
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/magnum/commit/79c7effa39c8ed9a1f48688ee61c5f709d6116af
