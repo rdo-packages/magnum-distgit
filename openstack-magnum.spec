@@ -26,8 +26,6 @@ URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
 
-#
-
 Source1:	%{service}.logrotate
 Source2:	%{name}-api.service
 Source3:	%{name}-conductor.service
