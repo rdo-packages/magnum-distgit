@@ -72,7 +72,7 @@ Requires: python3-oslo-config >= 2:8.1.0
 Requires: python3-oslo-context >= 3.1.0
 Requires: python3-oslo-db >= 8.2.0
 Requires: python3-oslo-i18n >= 5.0.0
-Requires: python3-oslo-log >= 4.6.1
+Requires: python3-oslo-log >= 4.2.0
 Requires: python3-oslo-messaging >= 12.2.0
 Requires: python3-oslo-middleware >= 4.1.0
 Requires: python3-oslo-policy >= 3.6.0
@@ -102,13 +102,12 @@ Requires: python3-six >= 1.10.0
 Requires: python3-stevedore >= 3.3.0
 Requires: python3-taskflow >= 2.16.0
 Requires: python3-cryptography >= 2.1.4
-Requires: python3-werkzeug >= 2.0.0
-Requires: python3-marathon >= 0.8.6
+Requires: python3-werkzeug >= 0.9
 
-Requires: python3-PyYAML
 Requires: python3-decorator >= 3.4.0
 Requires: python3-setuptools >= 30.0.0
 Requires: python3-yaml >= 3.13
+Requires: python3-oslo-serialization >= 3.2.0
 
 
 %description -n python3-%{service}
