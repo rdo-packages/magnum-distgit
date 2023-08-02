@@ -34,6 +34,24 @@
       "parentUuid": "e65c7896_cb0b4eec",
       "revId": "09224f0e57fa0a39783b78fbe2b926464b84ebd7",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb714144_90e3c68a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-08-02T13:14:30Z",
+      "side": 1,
+      "message": "Ok works for me, extra subpackage suits well the driver usecase",
+      "parentUuid": "5fccae94_c2c211fb",
+      "revId": "09224f0e57fa0a39783b78fbe2b926464b84ebd7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
