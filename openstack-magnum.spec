@@ -1,6 +1,5 @@
-%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate os-api-ref
@@ -17,15 +16,13 @@ provisioning, scaling, and managing container orchestration engines.
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	17.0.0
-Release:	0.1%{?milestone}%{?dist}
+Version:	17.0.1
+Release:	1%{?dist}
 License:	Apache-2.0
 URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
 
-#
-# patches_base=17.0.0.0rc1
 #
 
 Source1:	%{service}.logrotate
@@ -268,6 +265,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Fri Oct 13 2023 RDO <dev@lists.rdoproject.org> 17.0.1-1
+- Update to 17.0.1
+
 * Fri Sep 15 2023 RDO <dev@lists.rdoproject.org> 17.0.0-0.1.0rc1
 - Update to 17.0.0.0rc1
 
