@@ -16,6 +16,41 @@
       "message": "we need https://review.opendev.org/c/openstack/magnum/+/897286 we can add it as patch in the distgit if there is no release before getting puppet modules",
       "revId": "56a91fb8a98df147b8f2707747bc77135f273d8d",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50bd5383_849594d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-10-05T06:24:58Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "56a91fb8a98df147b8f2707747bc77135f273d8d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8404d92f_de2e29a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-10-05T06:24:58Z",
+      "side": 1,
+      "message": "New release requested https://review.opendev.org/c/openstack/releases/+/897397",
+      "parentUuid": "12215d2b_245885eb",
+      "revId": "56a91fb8a98df147b8f2707747bc77135f273d8d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
