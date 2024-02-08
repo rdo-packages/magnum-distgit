@@ -16,7 +16,7 @@ provisioning, scaling, and managing container orchestration engines.
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	17.0.1
+Version:	17.0.2
 Release:	1%{?dist}
 License:	Apache-2.0
 URL:		https://github.com/openstack/magnum.git
@@ -265,6 +265,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Thu Feb 08 2024 RDO <dev@lists.rdoproject.org> 17.0.2-1
+- Update to 17.0.2
+
 * Fri Oct 13 2023 RDO <dev@lists.rdoproject.org> 17.0.1-1
 - Update to 17.0.1
 
