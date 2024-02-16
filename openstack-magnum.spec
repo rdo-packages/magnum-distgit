@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xa7475c5f2122fec3f90343223fe3bf5aad1080e4
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc %{!?_without_doc:1}%{?_without_doc:0}
 %global service magnum
@@ -10,7 +10,7 @@ provisioning, scaling, and managing container orchestration engines.
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	15.0.1
+Version:	15.0.2
 Release:	1%{?dist}
 License:	ASL 2.0
 URL:		https://github.com/openstack/magnum.git
@@ -359,6 +359,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Fri Feb 16 2024 RDO <dev@lists.rdoproject.org> 15.0.2-1
+- Update to 15.0.2
+
 * Mon Jan 09 2023 RDO <dev@lists.rdoproject.org> 15.0.1-1
 - Update to 15.0.1
 
