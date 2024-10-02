@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0xf8675126e2411e7748dd46662fc2093e4682645f
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -18,14 +17,12 @@ provisioning, scaling, and managing container orchestration engines.
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
 Version:	19.0.0
-Release:	0.1%{?milestone}%{?dist}
+Release:	1%{?dist}
 License:	Apache-2.0
 URL:		https://github.com/openstack/magnum.git
 
 Source0:	https://tarballs.openstack.org/%{service}/%{service}-%{upstream_version}.tar.gz
 
-#
-# patches_base=19.0.0.0rc1
 #
 
 Source1:	%{service}.logrotate
@@ -268,6 +265,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Wed Oct 02 2024 RDO <dev@lists.rdoproject.org> 19.0.0-1
+- Update to 19.0.0
+
 * Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 19.0.0-0.1.0rc1
 - Update to 19.0.0.0rc1
 
