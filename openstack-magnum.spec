@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate os-api-ref
@@ -16,7 +16,7 @@ provisioning, scaling, and managing container orchestration engines.
 
 Name:		openstack-%{service}
 Summary:	Container Management project for OpenStack
-Version:	18.0.0
+Version:	18.0.1
 Release:	1%{?dist}
 License:	Apache-2.0
 URL:		https://github.com/openstack/magnum.git
@@ -265,6 +265,9 @@ exit 0
 %systemd_postun_with_restart %{name}-api.service
 
 %changelog
+* Thu Jan 30 2025 RDO <dev@lists.rdoproject.org> 18.0.1-1
+- Update to 18.0.1
+
 * Wed Apr 03 2024 RDO <dev@lists.rdoproject.org> 18.0.0-1
 - Update to 18.0.0
 
